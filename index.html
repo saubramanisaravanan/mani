@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2024</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.1.1"></script>
+    <style>
+        body {
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            overflow: hidden;
+            background-color: #fff3a6; /* Light yellow background color */
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                        0 0 20px rgba(255, 160, 0, 0.8),
+                        0 0 30px rgba(255, 69, 0, 0.8),
+                        0 0 40px rgba(255, 0, 0, 0.8);
+            animation: letterEntrance 0.5s forwards, sequentialEntrance 1s ease 2s forwards;
+            font-family: 'Pacifico', cursive;
+            background: linear-gradient(45deg, #6699ff, #cc66ff, #6699ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        h1 span {
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            animation: goldGlow 2s infinite alternate;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            animation: sequentialEntrance 1s ease 3s forwards;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .wishes-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wisher {
+            background-color: rgba(46, 204, 113, 0.8);
+            padding: 15px;
+            margin: 10px;
+            width: 80%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            position: relative;
+            color: #000;
+            border-radius: 50%;
+        }
+
+        .wisher h2,
+        .wisher p {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            color: #fff;
+            font-family: 'Pacifico', cursive;
+        }
+
+        @keyframes sequentialEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes letterEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .wisher:nth-child(1) {
+            animation: sequentialEntrance 1s ease 5s forwards;
+        }
+
+        .wisher:nth-child(2) {
+            animation: sequentialEntrance 1s ease 6s forwards;
+        }
+
+        .wisher:nth-child(3) {
+            animation: sequentialEntrance 1s ease 7s forwards;
+        }
+
+        .wisher:nth-child(1) h2,
+        .wisher:nth-child(1) p {
+            animation: sequentialEntrance 0.5s ease 4s forwards;
+        }
+
+        .wisher:nth-child(2) h2,
+        .wisher:nth-child(2) p {
+            animation: sequentialEntrance 0.5s ease 5s forwards;
+        }
+
+        .wisher:nth-child(3) h2,
+        .wisher:nth-child(3) p {
+            animation: sequentialEntrance 0.5s ease 6s forwards;
+        }
+
+        .wisher:nth-child(1) {
+            background-color: #3498db;
+        }
+
+        .wisher:nth-child(2) {
+            background-color: #e74c3c;
+        }
+
+        .wisher:nth-child(3) {
+            background-color: #f39c12;
+        }
+    </style>
+</head>
+
+<body class="animated">
+    <script>
+        function triggerConfetti() {
+            const colors = ['#ff0000', '#00ff00', '#0000ff'];
+            const end = Date.now() + (5 * 1000);
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: {
+                        x: 0,
+                        y: 0.6
+                    },
+                    colors: colors
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: {
+                        x: 1,
+                        y: 0.6
+                    },
+                    colors: colors
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        setTimeout(triggerConfetti, 1000);
+    </script>
+    <center>
+        <h1><span>H</span>appy <span>N</span>ew <span>Y</span>ear 2024 ❤️</h1>
+    </center>
+    <div class="wishes-container">
+        <div class="wisher">
+            <h2>Ranjith</h2>
+            <p>Wishing you a year of new opportunities and exciting adventures!</p>
+        </div>
+
+        <div class="wisher">
+            <h2>Dharmaraj</h2>
+            <p>May this year bring you happiness and fulfillment in all your endeavors!</p>
+        </div>
+
+        <div class="wisher">
+            <h2>Subramani</h2>
+            <p>May the coming year be filled with good health, love, and prosperity for you and your loved ones!</p>
+        </div>
+    </div>
+</body>
+
+</html>
